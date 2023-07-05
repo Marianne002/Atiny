@@ -16,20 +16,23 @@ https://flutterawesome.com/music-player-frontend-built-with-flutter/
 ### Musikin Aja - Music Player App:
 https://dribbble.com/shots/17219469-Musikin-Aja-Music-Player-App
 
-=> Capture d'écran - Page d'accueil:
+=> Capture d'écran:
+- Page d'accueil:
 <img src="https://cdn.dribbble.com/users/7072315/screenshots/17219469/media/7471cd3aa828c08e58dbc7db7fd821ed.png" alt="Page chanson détails" width="400"/>
 
 
 ### Muzira music application
 https://dribbble.com/shots/17988274-Muzira-music-application
 
-=> Capture d'écran - Page Main détails présentation des paroles:
+=> Capture d'écran:
+- Page Main détails présentation des paroles:
 <img src="lyrics.jpg" width="200"/>
 
 
 ### Spotify
 https://dribbble.com/shots/17988274-Muzira-music-application
 
-=> Capture d'écran - Page Main détails présentation des paroles:
+=> Capture d'écran:
+- Page Main détails présentation des paroles:
 <img src="https://techanoa.com/wp-content/uploads/2023/02/Why-are-Spotify-lyrics-not-showing-working-techanoa.com_.png" width="400"/>
 
