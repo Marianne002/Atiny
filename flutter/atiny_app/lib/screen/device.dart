@@ -1,6 +1,7 @@
 ///
 //screen/device.dart
 ///
+import 'package:atiny_app/screen/album.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'tracks.dart';
@@ -16,7 +17,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
 
   final List<Widget> _screenList = [
     HomeScreen(),
-    TracksScreen(),
+    AlbumListScreen(),
     ConcertsScreen(),
   ];
 
