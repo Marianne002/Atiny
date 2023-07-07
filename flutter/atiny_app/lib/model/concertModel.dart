@@ -9,12 +9,14 @@ import 'dart:convert';
 class Concert {
   int id;
   String date;
+  String image;
   String address;
 
   Concert(
     {
       required this.id,
       required this.date,
+      required this.image,
       required this.address,
     }
   );
@@ -23,6 +25,7 @@ class Concert {
     return Concert(
       id: json['id'], 
       date: json['date'], 
+      image: json['image'], 
       address: json['address'],
     );
   }

@@ -4,7 +4,6 @@
 import 'package:atiny_app/screen/album.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'tracks.dart';
 import 'concerts.dart';
 
 class DeviceScreen extends StatefulWidget {
@@ -17,16 +16,13 @@ class _DeviceScreenState extends State<DeviceScreen> {
 
   final List<Widget> _screenList = [
     HomeScreen(),
-    AlbumListScreen(),
+    AlbumListPage(),
     ConcertsScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Atiny"),
-      ),
       body:  _screenList[_currentScreen],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
