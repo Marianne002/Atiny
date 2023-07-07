@@ -1,4 +1,4 @@
-import 'package:atiny_app/screen/device.dart';
+import 'package:atiny_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
         //brightness: Brightness.dark,
         //scaffoldBackgroundColor: Color.fromARGB(255, 178, 160, 208)
       ), 
-      home: DeviceScreen(),
+      home: SplashScreen(),
       //
     );
   }
