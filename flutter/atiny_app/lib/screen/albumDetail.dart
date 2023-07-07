@@ -14,45 +14,51 @@ class AlbumDetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(album.name),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget> [
-          Padding(padding: const EdgeInsets.all(8.0), 
-            child: 
-              Center(child:
-                Image.network(album.cover, height: 200, width: 200,),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Image.network(
+                  album.cover,
+                  height: 200,
+                  width: 200,
+                ),
               ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              '${album.name}',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'Release Year: ${album.releaseYear}',
-              style: const TextStyle(fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '${album.name}',
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Padding(
-            padding:  const EdgeInsets.all(8.0),
-            child: Text(
-              'Description: ${album.description}',
-              style: const TextStyle(fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Release Year: ${album.releaseYear}',
+                style: const TextStyle(fontSize: 16),
+              ),
             ),
-          ),
-          const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child: Text(
-              'Tracks:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Description: ${album.description}',
+                style: const TextStyle(fontSize: 16),
+              ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Tracks:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: album.tracks.length,
               itemBuilder: (context, index) {
                 final track = album.tracks[index];
@@ -70,11 +76,9 @@ class AlbumDetailPage extends StatelessWidget {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
-
-  
 }
