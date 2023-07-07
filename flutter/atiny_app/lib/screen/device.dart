@@ -31,7 +31,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
         onTap: onTabTapped,
         items: const[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.album), label: "Tracks"),
+          BottomNavigationBarItem(icon: Icon(Icons.album), label: "Albums"),
           BottomNavigationBarItem(icon: Icon(Icons.music_note), label: "Concerts"),
         ]
       ),

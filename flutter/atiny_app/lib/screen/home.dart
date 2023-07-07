@@ -1,11 +1,18 @@
-///
-///screen/home.dart
-///
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  final List<String> items = [
+    'https://marianneg.alwaysdata.net/flutter/img/members/hongjoong.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/seonghwa.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/yuhno.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/yeosang.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/san.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/mingi.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/wooyoung.png',
+    'https://marianneg.alwaysdata.net/flutter/img/members/jongho.png',
+  ];
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -14,20 +21,46 @@ class HomeScreen extends StatelessWidget {
           //style: heading,
         ),
       ),
-
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20),
               child: Center(
                 child: Image.network(
-                  ""
+                  "https://marianneg.alwaysdata.net/flutter/img/logo.png",
                 ),
               ),
             ),
-            
+            const Padding(
+              padding:  EdgeInsets.all(20),
+              child: Text(
+                'Ateez is the name of a k-pop band, which was established in South Korea in 2019, and consists of eight male members. \n\n The boy band has released albums in both Korean and Japanese, and has a large fan base worldwide.\n\n The popularity of ATEEZ has earned them the title of Global Ambassadors of Korean Culture.',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final item = items[index];
+                  return Card(
+                    child: Center(
+                      child: Image.network(item,),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
