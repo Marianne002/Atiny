@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'albumDetail.dart';
-//import 'package:vegan_eats/theme.dart';
-
 import '../model/albumModel.dart';
 
 class AlbumListPage extends StatelessWidget {
@@ -21,7 +19,7 @@ class AlbumListPage extends StatelessWidget {
         builder: (context, AsyncSnapshot<List<Album>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child:  CircularProgressIndicator(),
+              child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasError) {
             return Center(
@@ -33,10 +31,7 @@ class AlbumListPage extends StatelessWidget {
               itemCount: albums.length,
               itemBuilder: (context, index) {
                 final album = albums[index];
-                return ListTile(
-                  leading: Image.network(album.cover, width: 100, height: 100,),
-                  title: Text(album.name),
-                  trailing: const Icon(Icons.arrow_right),
+                return GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
@@ -45,6 +40,21 @@ class AlbumListPage extends StatelessWidget {
                       ),
                     );
                   },
+                  child: 
+                    Padding(
+                      padding: EdgeInsets.only(left: 40, right: 40, bottom: 10, top:10),
+                      child: Card(
+                        child: Column(
+                          children:[
+                          SizedBox(height: 20),
+                          Image.network(album.cover, width: 200, height: 200),
+                          SizedBox(height: 20),
+                          Text(album.name),
+                          SizedBox(height: 20),
+                        ],
+                      )
+                    ),
+                  ),
                 );
               },
             );
