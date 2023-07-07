@@ -27,36 +27,47 @@ class AlbumListPage extends StatelessWidget {
             );
           } else if (snapshot.hasData) {
             final albums = snapshot.data!;
-            return ListView.builder(
-              itemCount: albums.length,
-              itemBuilder: (context, index) {
-                final album = albums[index];
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AlbumDetailPage(album: album),
+            return Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color.fromARGB(146, 244, 67, 54), Color.fromARGB(145, 255, 235, 59), const Color.fromARGB(226, 124, 77, 255), Colors.black],
+                ),
+              ),
+              child: ListView.builder(
+                itemCount: albums.length,
+                itemBuilder: (context, index) {
+                  final album = albums[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AlbumDetailPage(album: album),
+                        ),
+                      );
+                    },
+                    child: 
+                      Padding(
+                        padding: EdgeInsets.only(left: 40, right: 40, bottom: 10, top:10),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Column(
+                            children:[
+                            Image.network(album.cover, fit: BoxFit.cover,),
+                            SizedBox(height: 20),
+                            Text(album.name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                            SizedBox(height: 20),
+                          ],
+                        ),
                       ),
-                    );
-                  },
-                  child: 
-                    Padding(
-                      padding: EdgeInsets.only(left: 40, right: 40, bottom: 10, top:10),
-                      child: Card(
-                        child: Column(
-                          children:[
-                          SizedBox(height: 20),
-                          Image.network(album.cover, width: 200, height: 200),
-                          SizedBox(height: 20),
-                          Text(album.name),
-                          SizedBox(height: 20),
-                        ],
-                      )
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             );
           } else {
             return const Center(

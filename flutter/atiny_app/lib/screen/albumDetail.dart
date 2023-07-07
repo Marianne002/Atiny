@@ -18,16 +18,27 @@ class AlbumDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Image.network(
-                  album.cover,
-                  height: 200,
-                  width: 200,
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color.fromARGB(146, 244, 67, 54), Color.fromARGB(145, 255, 235, 59), const Color.fromARGB(220, 124, 77, 255), const Color.fromARGB(240, 0, 0, 0)],
                 ),
               ),
+              child:
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Image.network(
+                      album.cover,
+                      height: 200,
+                      width: 200,
+                    ),
+                  ),
+                ),
             ),
+            
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -48,6 +59,8 @@ class AlbumDetailPage extends StatelessWidget {
                 'Description: ${album.description}',
                 style: const TextStyle(fontSize: 16),
               ),
+            ),
+            const Divider( height: 20, thickness: 1, endIndent: 0, color: Colors.black,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),

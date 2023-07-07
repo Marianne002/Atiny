@@ -15,6 +15,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
   int _currentScreen = 0;
 
   final List<Widget> _screenList = [
+    // ignore: prefer_const_constructors
     HomeScreen(),
     AlbumListPage(),
     ConcertsScreen(),
