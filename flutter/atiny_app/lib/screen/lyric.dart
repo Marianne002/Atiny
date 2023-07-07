@@ -14,7 +14,7 @@ class TrackDetailPage extends StatelessWidget {
         title: Text(track.title),
       ),
       body: ListView(
-        padding: EdgeInsets.all(40),
+        padding: const EdgeInsets.all(40),
         children: [
           LyricsText(),
         ]
@@ -22,12 +22,13 @@ class TrackDetailPage extends StatelessWidget {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Expanded LyricsText() => Expanded(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text( track.title, style: const TextStyle(fontSize: 40, ),),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Text( track.lyrics, style: const TextStyle(fontSize: 20, ), textAlign: TextAlign.center,),
       ]
     ),
@@ -35,10 +36,3 @@ class TrackDetailPage extends StatelessWidget {
 
   
 }
-/**Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          track.lyrics,
-          style: const TextStyle(fontSize: 16),
-        ),
-      ), */

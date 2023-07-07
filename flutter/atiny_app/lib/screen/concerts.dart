@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import '../model/concertModel.dart';
 
+// ignore: use_key_in_widget_constructors
 class ConcertsScreen extends StatelessWidget {
   final ConcertHttp concertHttp = ConcertHttp();
 
@@ -23,7 +24,7 @@ class ConcertsScreen extends StatelessWidget {
             final concerts = snapshot.data!;
             return ListView.separated(
               itemCount: concerts.length,
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 color: Colors.grey, // Customize the separator color as desired
               ),
               itemBuilder: (context, index) {

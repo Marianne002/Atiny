@@ -1,13 +1,12 @@
-///
-//screen/device.dart
-///
 import 'package:atiny_app/screen/album.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'concerts.dart';
 
+// ignore: use_key_in_widget_constructors
 class DeviceScreen extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _DeviceScreenState createState() => _DeviceScreenState();
 }
 

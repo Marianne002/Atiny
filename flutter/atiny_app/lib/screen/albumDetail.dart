@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'lyric.dart';
 import '../model/albumModel.dart';
@@ -19,11 +20,11 @@ class AlbumDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [Color.fromARGB(146, 244, 67, 54), Color.fromARGB(145, 255, 235, 59), const Color.fromARGB(220, 124, 77, 255), const Color.fromARGB(240, 0, 0, 0)],
+                  colors: [Color.fromARGB(146, 244, 67, 54), Color.fromARGB(145, 255, 235, 59), Color.fromARGB(220, 124, 77, 255), Color.fromARGB(240, 0, 0, 0)],
                 ),
               ),
               child:
@@ -42,7 +43,7 @@ class AlbumDetailPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                '${album.name}',
+                album.name,
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
@@ -71,7 +72,7 @@ class AlbumDetailPage extends StatelessWidget {
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: album.tracks.length,
               itemBuilder: (context, index) {
                 final track = album.tracks[index];

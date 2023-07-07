@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: use_key_in_widget_constructors
 class HomeScreen extends StatelessWidget {
   final List<String> items = [
     'https://marianneg.alwaysdata.net/flutter/img/members/hongjoong.png',

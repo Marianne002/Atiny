@@ -1,6 +1,3 @@
-///
-/// model/concert.dart
-///
 import 'package:atiny_app/config.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
