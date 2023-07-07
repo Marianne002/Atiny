@@ -62,6 +62,13 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            const Padding(
+              padding:  EdgeInsets.all(20),
+              child: Text(
+                "ATINY is ATEEZ`s official fandom name. \n \n ATINY is a contraction of 'ATEEZ and destiny' and signifies that ATEEZ's future is together with their fans.",
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
           ],
         ),
       ),
